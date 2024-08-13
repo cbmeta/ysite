@@ -28,6 +28,9 @@
         <li><button id="purchaseButton" type="button">Purchase</button></li>
         <li><button id="subcribeButton" type="button">Subscribe</button></li>
         <li><button id="registrationButton" type="button">Registration</button></li>
+         <li><button id="CustomDataEvent_button" type="button">CustomDataEvent</button></li>
+        <li><button id="unverifiedEvent_button" type="button">unverifiedEvent</button></li>     
+        <li><button id="unWantedEvent_button" type="button">unWantedEvent</button></li> 
     </ul>
     </div>
 
@@ -58,5 +61,25 @@ document.getElementById('subcribeButton').addEventListener('click', function() {
 document.getElementById('registrationButton').addEventListener('click', function() {
   cbq('track', 'CompleteRegistration');
 }, false);
+document.getElementById('unWantedEvent_button').addEventListener('click', function() {
+  cbq('track', 'unWantedEvent');
+}, false);
+
+document.getElementById('unverifiedEvent_button').addEventListener('click', function() {
+  cbq('track', 'unverifiedEvent', {
+ value: 100,
+    currency: 'USD',
+    ssn:'11223333'  
+  });
+}, false);
+
+document.getElementById('CustomDataEvent_button').addEventListener('click', function() {
+  cbq('track', 'CustomDataEvent', {
+    value: 100,
+    currency: 'USD',
+    ssn:'11223333'  
+  });
+}, false);
+
 </script>
 </body>
